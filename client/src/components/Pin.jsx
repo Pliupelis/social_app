@@ -77,6 +77,16 @@ const Pin = ({ pin }) => {
           >
             <div className="flex items-center justify-between">
               <div className="flex gap-2">
+                <Link
+                  to={`/user-profile/${postedBy?._id}`}
+                  className="flex gap-2 mt-2 items-center "
+                >
+                  <img
+                    className="w-8 h-8 rounded-full object-cover"
+                    src={postedBy?.image}
+                    alt="user-profile"
+                  />
+                </Link>
                 <a
                   href={`${image?.asset?.url}?dl=`}
                   download
@@ -116,7 +126,6 @@ const Pin = ({ pin }) => {
                   className="bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
                   rel="noreferrer"
                 >
-                  {" "}
                   <BsFillArrowUpRightCircleFill />
                   {destination?.slice(8, 17)}...
                 </a>
@@ -137,17 +146,6 @@ const Pin = ({ pin }) => {
           </div>
         )}
       </div>
-      <Link
-        to={`/user-profile/${postedBy?._id}`}
-        className="flex gap-2 mt-2 items-center"
-      >
-        <img
-          className="w-8 h-8 rounded-full object-cover"
-          src={postedBy?.image}
-          alt="user-profile"
-        />
-        <p className="font-semibold capitalize">{postedBy?.userName}</p>
-      </Link>
     </div>
   );
 };
