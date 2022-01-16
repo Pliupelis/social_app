@@ -29,6 +29,7 @@ const Home = () => {
   useEffect(() => {
     scrollRef.current.scrollTo(0, 0);
   });
+  console.log(user?.image);
   return (
     <div className="flex bg-gray-50 md:flex-row flex-col h-screen transition-height duration-75 ease-out">
       <div className="hidden md:flex h-screen flex-initial">
@@ -48,7 +49,8 @@ const Home = () => {
             <img
               src={user?.image}
               alt="user-pic"
-              className="w-9 h-9 rounded-full "
+              className="w-9 h-9 rounded-full"
+              referrerPolicy="no-referrer"
             />
           </Link>
         </div>
